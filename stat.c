@@ -3,21 +3,21 @@
 
 int get_disk_status()
 {
-     char *cmd = "sudo -A su -c 'fdisk -l' | awk -f filters/disk.awk";
+     char *cmd = "sudo -A su -c 'fdisk -l' | awk -f /home/sriram/src/c/utils/stat/filters/disk.awk";
      system(cmd);
      return 0;
 }
 
 int get_general_devstat()
 {
-     char *cmd = "uname -a | awk -f filters/gen.awk";
+     char *cmd = "uname -a | awk -f /home/sriram/src/c/utils/stat/filters/gen.awk";
      system(cmd);
      return 0;
 }
 
 int get_user_details()
 {
-     char *cmd = "awk -f filters/user.awk < /etc/passwd";
+     char *cmd = "awk -f /home/sriram/src/c/utils/stat/filters/user.awk < /etc/passwd";
      system(cmd);
      return 0;
 }
